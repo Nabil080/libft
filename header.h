@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:58:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:39:05 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:46:52 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	*ft_memset(void *s, int c, size_t n);
 
 void	ft_bzero(void *s, size_t n);
 
-void	*memcpy(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:29:23 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:09:42 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	test_strlen(strings, argc);
 	test_memset(argc);
 	test_bzero(argc);
+	test_memcpy(argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -167,12 +168,13 @@ void	test_isascii(char *chars, int argc)
 
 void	test_memset(argc)
 {
-	char	buffer[10];
-	char	ft_buffer[10];
-	char	*str = (char *) memset(buffer, 'A', 5);
-	char	*ft_str = (char *) ft_memset(ft_buffer, 'A', 5);
+	char	buffer[SIZE];
+	char	ft_buffer[SIZE];
+	char	*str = (char *) memset(buffer, 'A', SIZE - 5);
+	char	*ft_str = (char *) ft_memset(ft_buffer, 'A', SIZE - 5);
 
 	printf("--------------------MEMSET--------------------\n\n");
+	printf("\"%d\" : ", SIZE - 5);
 	if (!strcmp(str, ft_str))
 		printf("OK !\n");
 	else
@@ -190,19 +192,44 @@ void	test_bzero(argc)
 	char	str[] = "Bonjourno";
 	char	ft_str[] = "Bonjourno";
 
+	printf("--------------------BZERO--------------------\n\n");
+	printf("Str = \"%s\", offset = %d : ", str, 3);
 	bzero(&str[3], 2);
 	ft_bzero(&ft_str[3], 2);
-	printf("--------------------BZERO--------------------\n\n");
 	if (!strcmp(str, ft_str))
 		printf("OK !\n");
 	else
 		printf("KO...\n");
 	if (argc > 1)
 	{
-		printf("Original : avant -> \"Bonjourno\", apres -> %s\n", str);
-		printf("Copie : avant -> \"Bonjourno\", apres -> %s\n", ft_str);
+		printf("Original : %s\n", str);
+		printf("Copie : %s\n", ft_str);
 	}
 	printf("\n");
+}
+
+void	test_memcpy(argc)
+{
+	char buffer[] = "Une phrase a copier";
+	char	str[SIZE];
+	memset(str, 0, 10);
+	memcpy(str, buffer, SIZE - 5);
+	char	ft_str[SIZE];
+	memset(ft_str, 0, 10);
+	ft_memcpy(ft_str, buffer, SIZE - 5);
+
+	printf("--------------------MEMCPY--------------------\n\n");
+	printf("A copier = \"%s\", size = %d : ", buffer, SIZE - 5);
+	if (!strcmp(str, ft_str))
+		printf("OK !\n");
+	else
+		printf("KO...\n");
+	if (argc > 1)
+	{
+		printf("Original : %s\n", str);
+		printf("Copie : %s\n", ft_str);
+	}
+	(void)buffer;
 }
 
 char	**test_strings(void)
@@ -221,7 +248,7 @@ char	*test_chars(void)
 {
 	char	*chars;
 
-	chars = malloc((10 + 1) * sizeof(char));
+	chars = malloc((SIZE + 1) * sizeof(char));
 	chars[0] = '0';
 	chars[1] = 'a';
 	chars[2] = 'A';
@@ -232,7 +259,7 @@ char	*test_chars(void)
 	chars[7] = 'z';
 	chars[8] = 'Z';
 	chars[9] = '9';
-	chars[10] = '\0';
+	chars[SIZE] = '\0';
 	return (chars);
 }
 
@@ -240,11 +267,11 @@ int	*test_nums(void)
 {
 	int	*nums;
 
-	nums = malloc(NUMS_SIZE * sizeof(int));
+	nums = malloc(SIZE * sizeof(int));
 	nums[0] = 0;
 	nums[1] = 10;
 	nums[3] = -10;
-	nums[5] = 50;
+	nums[SIZE / 2] = 50;
 	nums[3] = -50;
 	nums[2] = 65;
 	nums[4] = -65;

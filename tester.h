@@ -6,14 +6,14 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:05:47 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:27:39 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:04:33 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
 
-# define NUMS_SIZE 10
+# define SIZE 10
 
 # include <stdio.h>
 # include <string.h>
@@ -44,5 +44,7 @@ void	test_strlcat(char **strings, int argc);
 void	test_memset(int argc);
 
 void	test_bzero(int argc);
+
+void	test_memcpy(int argc);
 
 #endif
