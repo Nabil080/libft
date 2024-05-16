@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 12:53:29 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:00:53 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	test_isalpha(chars, argc);
 	printf("--------------------ISDIGIT--------------------\n\n");
 	test_isdigit(chars, argc);
+	printf("--------------------ISALNUM--------------------\n\n");
+	test_isalnum(chars, argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -70,7 +72,7 @@ void	test_isalpha(char *chars, int argc)
 	i = 0;
 	while (chars[i])
 	{
-		printf("\"%i\" : ", chars[i]);
+		printf("\"%c\" : ", chars[i]);
 		if (isalpha(chars[i]) && ft_isalpha(chars[i]))
 			printf("OK !\n");
 		else if (!isalpha(chars[i]) && !ft_isalpha(chars[i]))
@@ -94,7 +96,7 @@ void	test_isdigit(char *chars, int argc)
 	i = 0;
 	while (chars[i])
 	{
-		printf("\"%i\" : ", chars[i]);
+		printf("\"%c\" : ", chars[i]);
 		if (isdigit(chars[i]) && ft_isdigit(chars[i]))
 			printf("OK !\n");
 		else if (!isdigit(chars[i]) && !ft_isdigit(chars[i]))
@@ -105,6 +107,30 @@ void	test_isdigit(char *chars, int argc)
 		{
 			printf("Original : %i\n", isdigit(chars[i]));
 			printf("Copie : %i\n", ft_isdigit(chars[i]));
+		}
+		printf("\n");
+		i++;
+	}
+}
+
+void	test_isalnum(char *chars, int argc)
+{
+	size_t	i;
+
+	i = 0;
+	while (chars[i])
+	{
+		printf("\"%c\" : ", chars[i]);
+		if (isalnum(chars[i]) && ft_isalnum(chars[i]))
+			printf("OK !\n");
+		else if (!isalnum(chars[i]) && !ft_isalnum(chars[i]))
+			printf("OK !\n");
+		else
+			printf("KO...\n");
+		if (argc > 1)
+		{
+			printf("Original : %i\n", isalnum(chars[i]));
+			printf("Copie : %i\n", ft_isalnum(chars[i]));
 		}
 		printf("\n");
 		i++;
