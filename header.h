@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:58:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 13:25:55 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 15:52:59 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		ft_isascii(int c);
 
 int		ft_isprint(int c);
 
-void	*memset(void *s, int c, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
