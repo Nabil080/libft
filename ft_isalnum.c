@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 13:58:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 12:57:30 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/16 11:50:33 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/16 12:56:36 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "header.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
-
-size_t	ft_strlcat(char *dst, const char *src, size_t siz);
-
-int		ft_isalpha(int c);
-
-int		ft_isdigit(int c);
-
-int		ft_isalnum(int c);
-
-#endif
+int	ft_isalnum(int c)
+{
+	return (ft_isalpha(c) || ft_isdigit(c));
+}
