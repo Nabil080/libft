@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 12:16:25 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:35:01 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	main(int argc, char **argv)
 
 	strings = test_strings();
 	nums = test_nums();
-	printf("\n--------------------STRLEN--------------------\n");
+	printf("--------------------STRLEN--------------------\n\n");
 	test_strlen(strings, argc);
-	printf("\n--------------------ISALPHA--------------------\n");
+	printf("--------------------ISALPHA--------------------\n\n");
 	test_isalpha(nums, argc);
 	/*
-	printf("\n--------------------STRLCPY--------------------\n");
+	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
-	printf("\n--------------------STRLCAT--------------------\n");
+	printf("--------------------STRLCAT--------------------\n");
 	test_strlcat(strings, argc);
 	*/
 	free(strings);
@@ -66,7 +66,9 @@ void	test_isalpha(int *nums, int argc)
 	while (i < NUMS_SIZE)
 	{
 		printf("\"%i\" : ", nums[i]);
-		if (isalpha(nums[i]) == ft_isalpha(nums[i]))
+		if (isalpha(nums[i]) && ft_isalpha(nums[i]))
+			printf("OK !\n");
+		else if (!isalpha(nums[i]) && !ft_isalpha(nums[i]))
 			printf("OK !\n");
 		else
 			printf("KO...\n");
@@ -157,10 +159,10 @@ int	*test_nums(void)
 	nums = malloc(NUMS_SIZE * sizeof(int));
 	nums[0] = 0;
 	nums[1] = 10;
-	nums[2] = 100;
 	nums[3] = -10;
+	nums[2] = 100;
 	nums[4] = -100;
-	nums[5] = 2147483647;
-	nums[6] = -2147483648;
+	nums[5] = 65;
+	nums[6] = -120;
 	return (nums);
 }

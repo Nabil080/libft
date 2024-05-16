@@ -6,13 +6,13 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 11:50:33 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 11:56:38 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:30:06 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int	is_alpha(int c)
+int	ft_isalpha(int c)
 {
-	return ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'));
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
