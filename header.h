@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:58:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 12:57:30 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:14:47 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 
 int		ft_isalnum(int c);
+
+int		ft_isascii(int c);
 
 #endif
