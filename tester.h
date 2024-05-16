@@ -6,20 +6,27 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:05:47 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/15 17:37:02 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:16:44 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTER_H
 # define TESTER_H
 
+# define NUMS_SIZE 7
+
 # include <stdio.h>
 # include <string.h>
 # include <bsd/string.h> 
+# include <ctype.h>
 
 char	**test_strings(void);
 
+int		*test_nums(void);
+
 void	test_strlen(char **strings, int argc);
+
+void	test_isalpha(int *nums, int argc);
 
 void	test_strlcpy(char **strings, int argc);
 

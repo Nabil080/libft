@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/15 17:57:26 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:16:25 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,22 @@
 int	main(int argc, char **argv)
 {
 	char	**strings;
+	int		*nums;
 
 	strings = test_strings();
+	nums = test_nums();
 	printf("\n--------------------STRLEN--------------------\n");
 	test_strlen(strings, argc);
+	printf("\n--------------------ISALPHA--------------------\n");
+	test_isalpha(nums, argc);
+	/*
 	printf("\n--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
 	printf("\n--------------------STRLCAT--------------------\n");
 	test_strlcat(strings, argc);
+	*/
 	free(strings);
+	free(nums);
 	return (0);
 	argv++;
 }
@@ -51,6 +58,28 @@ void	test_strlen(char **strings, int argc)
 	}
 }
 
+void	test_isalpha(int *nums, int argc)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < NUMS_SIZE)
+	{
+		printf("\"%i\" : ", nums[i]);
+		if (isalpha(nums[i]) == ft_isalpha(nums[i]))
+			printf("OK !\n");
+		else
+			printf("KO...\n");
+		if (argc > 1)
+		{
+			printf("Original : %i\n", isalpha(nums[i]));
+			printf("Copie : %i\n", ft_isalpha(nums[i]));
+		}
+		printf("\n");
+		i++;
+	}
+}
+/*
 void	test_strlcpy(char **strings, int argc)
 {
 	char	*cpy;
@@ -107,6 +136,7 @@ void	test_strlcat(char **strings, int argc)
 		i++;
 	}
 }
+*/
 
 char	**test_strings(void)
 {
@@ -118,4 +148,19 @@ char	**test_strings(void)
 	strings[2] = "Deux mots";
 	strings[3] = 0;
 	return (strings);
+}
+
+int	*test_nums(void)
+{
+	int	*nums;
+
+	nums = malloc(NUMS_SIZE * sizeof(int));
+	nums[0] = 0;
+	nums[1] = 10;
+	nums[2] = 100;
+	nums[3] = -10;
+	nums[4] = -100;
+	nums[5] = 2147483647;
+	nums[6] = -2147483648;
+	return (nums);
 }
