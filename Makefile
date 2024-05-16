@@ -6,6 +6,7 @@ SRCS = 	ft_strlen.c \
 		ft_isalnum.c \
 		ft_isascii.c \
 		ft_isprint.c \
+		ft_memset.c \
 
 FLAGS = -Wall -Wextra -Werror
 
