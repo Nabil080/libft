@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:58:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/15 17:16:44 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 12:17:03 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
+
+int		ft_isalpha(int c);
 
 #endif

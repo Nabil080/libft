@@ -1,8 +1,7 @@
 NAME = libft.a
 
 SRCS = 	ft_strlen.c \
-		ft_strlcpy.c \
-		ft_strlcat.c
+		ft_isalpha.c
 
 FLAGS = -Wall -Wextra -Werror
 
