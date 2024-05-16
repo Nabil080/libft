@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 13:16:11 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:16:07 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@ int	main(int argc, char **argv)
 	strings = test_strings();
 	chars = test_chars();
 	nums = test_nums();
+	printf("--------------------IS_ALPHA--------------------\n\n");
+	test_isalpha(chars, argc);
+	printf("--------------------IS_DIGIT--------------------\n\n");
+	test_isdigit(chars, argc);
+	printf("--------------------IS_ALNUM--------------------\n\n");
+	test_isalnum(chars, argc);
+	printf("--------------------IS_ASCII--------------------\n\n");
+	test_isascii(chars, argc);
 	printf("--------------------STRLEN--------------------\n\n");
 	test_strlen(strings, argc);
-	printf("--------------------ISALPHA--------------------\n\n");
-	test_isalpha(chars, argc);
-	printf("--------------------ISDIGIT--------------------\n\n");
-	test_isdigit(chars, argc);
-	printf("--------------------ISALNUM--------------------\n\n");
-	test_isalnum(chars, argc);
-	printf("--------------------ISASCII--------------------\n\n");
-	test_isascii(chars, argc);
+	printf("--------------------MEMSET--------------------\n\n");
+	test_memset(argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -157,70 +159,30 @@ void	test_isascii(char *chars, int argc)
 		{
 			printf("Original : %i\n", isascii(chars[i]));
 			printf("Copie : %i\n", ft_isascii(chars[i]));
-		}
 		printf("\n");
-		i++;
-	}
-}
-
-/*
-void	test_strlcpy(char **strings, int argc)
-{
-	char	*cpy;
-	char	*ft_cpy;
-	size_t	i;
-
-	i = 0;
-	while (strings[i])
-	{
-		cpy = malloc(strlen(strings[i]) + 1 * sizeof(char));
-		ft_cpy = malloc(strlen(strings[i]) + 1 * sizeof(char));
-		printf("\"%s\" : ", strings[i]);
-		if (strlcpy(cpy, strings[i], i + 1) != ft_strlcpy(ft_cpy, strings[i], i + 1))
-			printf("KO...\n");
-		else if (strcmp(cpy, ft_cpy))
-			printf("KO...\n");
-		else
-			printf("OK !\n");
-		if (argc > 1)
-		{
-			printf("Original : cpy = \"%s\", ret = %lu\n", cpy, strlcpy(ft_cpy, strings[i], i));
-			printf("Copie : ft_cpy = \"%s\", ret = %lu\n", cpy, ft_strlcpy(ft_cpy, strings[i], i));
-		}
-		free(cpy);
-		free(ft_cpy);
-		i++;
-	}
-}
-
-void	test_strlcat(char **strings, int argc)
-{
-	size_t	i;
-	size_t	ret;
-	size_t	ft_ret;
-	char	*dst;
-	char	*ft_dst;
-
-	i = 0;
-	while (strings[i])
-	{
-		dst = "dst";
-		ft_dst = "dst";
-		ret = strlcat(dst, strings[i], 1);
-		ft_ret = ft_strlcat(dst, strings[i], 1);
-		if (strcmp(dst, ft_dst) || ret != ft_ret)
-			printf("KO...\n");
-		else
-			printf("OK !\n");
-		if (argc > 1)
-		{
-			printf("Original : cat = \"%s\", ret = %lu\n", dst, ret);
-			printf("Copie : ft_cat = \"%s\", ret = %lu\n", dst, ft_ret);
 		}
 		i++;
 	}
 }
-*/
+
+void	test_memset(argc)
+{
+	char	buffer[10];
+	char	ft_buffer[10];
+	char	*str = (char *) memset(buffer, 'A', 5);
+	char	*ft_str = (char *) ft_memset(ft_buffer, 'A', 5);
+
+	if (!strcmp(str, ft_str))
+		printf("OK !\n");
+	else
+		printf("KO...\n");
+	if (argc > 1)
+	{
+		printf("Original : %s\n", str);
+		printf("Copie : %s\n", ft_str);
+	}
+	printf("\n");
+}
 
 char	**test_strings(void)
 {
