@@ -4,6 +4,7 @@ SRCS = 	ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
+		ft_isascii.c \
 
 FLAGS = -Wall -Wextra -Werror
 
