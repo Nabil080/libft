@@ -8,6 +8,7 @@ SRCS = 	ft_strlen.c \
 		ft_isprint.c \
 		ft_memset.c \
 		ft_bzero.c \
+		ft_memcpy.c \
 
 FLAGS = -Wall -Wextra -Werror
 
