@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:05:47 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 12:58:50 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:14:30 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	test_isalpha(char *chars, int argc);
 void	test_isdigit(char *chars, int argc);
 
 void	test_isalnum(char *chars, int argc);
+
+void	test_isascii(char *chars, int argc);
 
 void	test_strlcpy(char **strings, int argc);
 

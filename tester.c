@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 13:00:53 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 13:16:11 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 	test_isdigit(chars, argc);
 	printf("--------------------ISALNUM--------------------\n\n");
 	test_isalnum(chars, argc);
+	printf("--------------------ISASCII--------------------\n\n");
+	test_isascii(chars, argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -136,6 +138,31 @@ void	test_isalnum(char *chars, int argc)
 		i++;
 	}
 }
+
+void	test_isascii(char *chars, int argc)
+{
+	size_t	i;
+
+	i = 0;
+	while (chars[i])
+	{
+		printf("\"%c\" : ", chars[i]);
+		if (isascii(chars[i]) && ft_isascii(chars[i]))
+			printf("OK !\n");
+		else if (!isascii(chars[i]) && !ft_isascii(chars[i]))
+			printf("OK !\n");
+		else
+			printf("KO...\n");
+		if (argc > 1)
+		{
+			printf("Original : %i\n", isascii(chars[i]));
+			printf("Copie : %i\n", ft_isascii(chars[i]));
+		}
+		printf("\n");
+		i++;
+	}
+}
+
 /*
 void	test_strlcpy(char **strings, int argc)
 {
