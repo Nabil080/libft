@@ -3,6 +3,7 @@ NAME = libft.a
 SRCS = 	ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
+		ft_isalnum.c \
 
 FLAGS = -Wall -Wextra -Werror
 
