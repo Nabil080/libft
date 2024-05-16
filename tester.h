@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:05:47 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:07:24 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:27:39 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <bsd/string.h> 
 # include <ctype.h>
+# include <strings.h>
 
 char	**test_strings(void);
 
@@ -41,5 +42,7 @@ void	test_strlcpy(char **strings, int argc);
 void	test_strlcat(char **strings, int argc);
 
 void	test_memset(int argc);
+
+void	test_bzero(int argc);
 
 #endif

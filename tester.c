@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:16:07 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 16:29:23 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,13 @@ int	main(int argc, char **argv)
 	strings = test_strings();
 	chars = test_chars();
 	nums = test_nums();
-	printf("--------------------IS_ALPHA--------------------\n\n");
 	test_isalpha(chars, argc);
-	printf("--------------------IS_DIGIT--------------------\n\n");
 	test_isdigit(chars, argc);
-	printf("--------------------IS_ALNUM--------------------\n\n");
 	test_isalnum(chars, argc);
-	printf("--------------------IS_ASCII--------------------\n\n");
 	test_isascii(chars, argc);
-	printf("--------------------STRLEN--------------------\n\n");
 	test_strlen(strings, argc);
-	printf("--------------------MEMSET--------------------\n\n");
 	test_memset(argc);
+	test_bzero(argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -51,6 +46,7 @@ void	test_strlen(char **strings, int argc)
 {
 	int	i;
 
+	printf("--------------------STRLEN--------------------\n\n");
 	i = 0;
 	while (strings[i])
 	{
@@ -73,6 +69,7 @@ void	test_isalpha(char *chars, int argc)
 {
 	size_t	i;
 
+	printf("--------------------IS_ALPHA--------------------\n\n");
 	i = 0;
 	while (chars[i])
 	{
@@ -97,6 +94,7 @@ void	test_isdigit(char *chars, int argc)
 {
 	size_t	i;
 
+	printf("--------------------IS_DIGIT--------------------\n\n");
 	i = 0;
 	while (chars[i])
 	{
@@ -121,6 +119,7 @@ void	test_isalnum(char *chars, int argc)
 {
 	size_t	i;
 
+	printf("--------------------IS_ALNUM--------------------\n\n");
 	i = 0;
 	while (chars[i])
 	{
@@ -145,6 +144,7 @@ void	test_isascii(char *chars, int argc)
 {
 	size_t	i;
 
+	printf("--------------------IS_ASCII--------------------\n\n");
 	i = 0;
 	while (chars[i])
 	{
@@ -172,6 +172,7 @@ void	test_memset(argc)
 	char	*str = (char *) memset(buffer, 'A', 5);
 	char	*ft_str = (char *) ft_memset(ft_buffer, 'A', 5);
 
+	printf("--------------------MEMSET--------------------\n\n");
 	if (!strcmp(str, ft_str))
 		printf("OK !\n");
 	else
@@ -180,6 +181,26 @@ void	test_memset(argc)
 	{
 		printf("Original : %s\n", str);
 		printf("Copie : %s\n", ft_str);
+	}
+	printf("\n");
+}
+
+void	test_bzero(argc)
+{
+	char	str[] = "Bonjourno";
+	char	ft_str[] = "Bonjourno";
+
+	bzero(&str[3], 2);
+	ft_bzero(&ft_str[3], 2);
+	printf("--------------------BZERO--------------------\n\n");
+	if (!strcmp(str, ft_str))
+		printf("OK !\n");
+	else
+		printf("KO...\n");
+	if (argc > 1)
+	{
+		printf("Original : avant -> \"Bonjourno\", apres -> %s\n", str);
+		printf("Copie : avant -> \"Bonjourno\", apres -> %s\n", ft_str);
 	}
 	printf("\n");
 }
