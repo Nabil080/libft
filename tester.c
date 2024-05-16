@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:42:28 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 17:09:42 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:04:49 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	test_memset(argc);
 	test_bzero(argc);
 	test_memcpy(argc);
+	test_memmove(argc);
 	/*
 	printf("--------------------STRLCPY--------------------\n");
 	test_strlcpy(strings, argc);
@@ -56,7 +57,7 @@ void	test_strlen(char **strings, int argc)
 			printf("OK !\n");
 		else
 			printf("KO...\n");
-		if (argc > 1)
+		if (argc == 1)
 		{
 			printf("Original : %lu\n", strlen(strings[i]));
 			printf("Copie : %lu\n", ft_strlen(strings[i]));
@@ -81,7 +82,7 @@ void	test_isalpha(char *chars, int argc)
 			printf("OK !\n");
 		else
 			printf("KO...\n");
-		if (argc > 1)
+		if (argc == 1)
 		{
 			printf("Original : %i\n", isalpha(chars[i]));
 			printf("Copie : %i\n", ft_isalpha(chars[i]));
@@ -106,7 +107,7 @@ void	test_isdigit(char *chars, int argc)
 			printf("OK !\n");
 		else
 			printf("KO...\n");
-		if (argc > 1)
+		if (argc == 1)
 		{
 			printf("Original : %i\n", isdigit(chars[i]));
 			printf("Copie : %i\n", ft_isdigit(chars[i]));
@@ -131,7 +132,7 @@ void	test_isalnum(char *chars, int argc)
 			printf("OK !\n");
 		else
 			printf("KO...\n");
-		if (argc > 1)
+		if (argc == 1)
 		{
 			printf("Original : %i\n", isalnum(chars[i]));
 			printf("Copie : %i\n", ft_isalnum(chars[i]));
@@ -156,7 +157,7 @@ void	test_isascii(char *chars, int argc)
 			printf("OK !\n");
 		else
 			printf("KO...\n");
-		if (argc > 1)
+		if (argc == 1)
 		{
 			printf("Original : %i\n", isascii(chars[i]));
 			printf("Copie : %i\n", ft_isascii(chars[i]));
@@ -166,7 +167,7 @@ void	test_isascii(char *chars, int argc)
 	}
 }
 
-void	test_memset(argc)
+void	test_memset(int argc)
 {
 	char	buffer[SIZE];
 	char	ft_buffer[SIZE];
@@ -179,7 +180,7 @@ void	test_memset(argc)
 		printf("OK !\n");
 	else
 		printf("KO...\n");
-	if (argc > 1)
+	if (argc == 1)
 	{
 		printf("Original : %s\n", str);
 		printf("Copie : %s\n", ft_str);
@@ -187,7 +188,7 @@ void	test_memset(argc)
 	printf("\n");
 }
 
-void	test_bzero(argc)
+void	test_bzero(int argc)
 {
 	char	str[] = "Bonjourno";
 	char	ft_str[] = "Bonjourno";
@@ -200,7 +201,7 @@ void	test_bzero(argc)
 		printf("OK !\n");
 	else
 		printf("KO...\n");
-	if (argc > 1)
+	if (argc == 1)
 	{
 		printf("Original : %s\n", str);
 		printf("Copie : %s\n", ft_str);
@@ -208,28 +209,50 @@ void	test_bzero(argc)
 	printf("\n");
 }
 
-void	test_memcpy(argc)
+void	test_memcpy(int argc)
 {
 	char buffer[] = "Une phrase a copier";
 	char	str[SIZE];
-	memset(str, 0, 10);
-	memcpy(str, buffer, SIZE - 5);
 	char	ft_str[SIZE];
-	memset(ft_str, 0, 10);
-	ft_memcpy(ft_str, buffer, SIZE - 5);
-
 	printf("--------------------MEMCPY--------------------\n\n");
 	printf("A copier = \"%s\", size = %d : ", buffer, SIZE - 5);
+
+	memset(str, 0, 10);
+	memcpy(str, buffer, SIZE - 5);
+	memset(ft_str, 0, 10);
+	ft_memcpy(ft_str, buffer, SIZE - 5);
 	if (!strcmp(str, ft_str))
 		printf("OK !\n");
 	else
 		printf("KO...\n");
-	if (argc > 1)
+	if (argc == 1)
 	{
 		printf("Original : %s\n", str);
 		printf("Copie : %s\n", ft_str);
 	}
-	(void)buffer;
+}
+
+void	test_memmove(int argc)
+{
+	char buffer[] = "Une phrase a copier";
+	char	str[SIZE];
+	char	ft_str[SIZE];
+	printf("--------------------MEMMOVE--------------------\n\n");
+	printf("A copier = \"%s\", size = %d : ", buffer, SIZE - 5);
+	
+	memset(str, 0, 10);
+	memmove(str, buffer, SIZE - 5);
+	memset(ft_str, 0, 10);
+	ft_memmove(ft_str, buffer, SIZE - 5);
+	if (!strcmp(str, ft_str))
+		printf("OK !\n");
+	else
+		printf("KO...\n");
+	if (argc == 1)
+	{
+		printf("Original : %s\n", str);
+		printf("Copie : %s\n", ft_str);
+	}
 }
 
 char	**test_strings(void)

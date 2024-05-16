@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 15:05:47 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 17:04:33 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:29:26 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	test_memset(int argc);
 void	test_bzero(int argc);
 
 void	test_memcpy(int argc);
+
+void	test_memmove(int argc);
 
 #endif
