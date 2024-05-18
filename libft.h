@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*	                                                                          */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   libft.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -26,7 +26,7 @@ int		ft_isalpha(int c);
 
 int		ft_isdigit(int c);
 
-int		ft_isalnum(int c);
+int		ft_isalnum(int c);	
 
 int		ft_isascii(int c);
 

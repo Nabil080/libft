@@ -6,11 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:45:54 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
