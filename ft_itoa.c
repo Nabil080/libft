@@ -6,13 +6,13 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:28:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:05:21 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 19:56:57 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_itoa_len(int n)
+static size_t	ft_itoa_len(int n)
 {
 	size_t	len;
 
