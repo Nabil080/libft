@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:32:08 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 15:21:36 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *) &s[i]);
 		i--;
 	}
+	if (s[i] == c)
+		return ((char *) &s[i]);
 	return (NULL);
 }
