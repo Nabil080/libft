@@ -21,6 +21,7 @@ SRCS = 	ft_strlen.c \
 		ft_memcmp.c \
 		ft_strnstr.c \
 		ft_atoi.c \
+		ft_atoi.c \
 
 FLAGS = -Wall -Wextra -Werror
 
