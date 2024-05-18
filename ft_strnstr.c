@@ -6,13 +6,13 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:43:00 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 16:16:54 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	little_len;
@@ -21,7 +21,7 @@ char	*strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	i = 0;
 	little_len = ft_strlen(little);
-	while (big[i] && i < len)
+	while (big[i] && i + little_len <= len)
 	{
 		if (ft_strncmp(&big[i], little, little_len) == 0)
 			return ((char *)&big[i]);
