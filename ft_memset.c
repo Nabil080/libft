@@ -6,9 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 13:24:43 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 16:06:19 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:30:29 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

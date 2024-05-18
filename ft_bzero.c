@@ -6,9 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:18:30 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 18:36:45 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:30:52 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 void	ft_bzero(void *s, size_t n)
 {

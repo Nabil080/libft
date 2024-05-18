@@ -6,9 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 14:06:23 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/15 14:23:17 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:29:32 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 size_t	ft_strlen(const char *s)
 {
