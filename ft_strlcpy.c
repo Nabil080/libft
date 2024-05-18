@@ -6,11 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:32:01 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:47:08 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 {

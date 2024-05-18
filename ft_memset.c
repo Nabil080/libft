@@ -6,11 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 13:24:43 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:45:37 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
