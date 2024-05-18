@@ -1,4 +1,18 @@
-char    *strchr(const char *s, int c)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/18 14:31:52 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 14:35:06 by nbellila         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+
+char    *ft_strchr(const char *s, int c)
 {
     size_t  i;
 
@@ -6,7 +20,7 @@ char    *strchr(const char *s, int c)
     while (s[i])
     {
         if (s[i] == c)
-            return (&s[i]);
+            return ((char *) &s[i]);
         i++;
     }
     return (NULL);

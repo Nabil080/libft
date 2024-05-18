@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/18 14:32:08 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 14:35:13 by nbellila         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
-char    *strrchr(const char *s, int c)
+char    *ft_strrchr(const char *s, int c)
 {
     size_t  i;
 
@@ -8,7 +20,7 @@ char    *strrchr(const char *s, int c)
     while (i)
     {
         if (s[i] == c)
-            return (&s[i]);
+            return ((char *) &s[i]);
         i--;
     }
     return (NULL);

@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/18 14:31:37 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 14:34:24 by nbellila         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+
 void    *ft_memchr(const void *s, int c, size_t n)
 {
     unsigned char    *ptr;
@@ -8,7 +22,7 @@ void    *ft_memchr(const void *s, int c, size_t n)
     while (i < n)
     {
         if (ptr[i] == c)
-            return (s + i);
+            return ((void *)(s + i));
         i++;
     }
     return (NULL);

@@ -6,9 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:14:34 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/16 18:35:34 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:32:16 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "header.h"
 
 int	ft_atoi(const char *nptr)
 {

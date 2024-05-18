@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/18 14:32:01 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 14:32:51 by nbellila         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 size_t  ft_strlcpy(char *dst, const char *src, size_t siz)
@@ -11,9 +23,9 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t siz)
     dest_len = 0;
     while (src[dest_len] && dest_len < siz - 1)
     {
-        dest[dest_len] = src[dest_len];
+        dst[dest_len] = src[dest_len];
         dest_len++;
     }
-    dest[i] = 0;
+    dst[dest_len] = 0;
     return (src_len);
 }
