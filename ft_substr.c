@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 17:10:51 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 17:56:44 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/18 16:49:52 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 17:56:43 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
 	size_t	i;
+	char	*str;
 
-	if (!dest && !src)
+	str = malloc((len + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	ptr = (char *) dest;
 	i = 0;
-	while (i < n)
+	while (i < len)
 	{
-		if (dest < src)
-			ptr[i] = *((char *)&src[i]);
-		else
-			ptr[n - i - 1] = *((char *)&src[n - i - 1]);
+		str[i] = s[start + i];
 		i++;
 	}
-	return (dest);
+	str[i] = 0;
+	return (str);
 }

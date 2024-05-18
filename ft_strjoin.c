@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 17:10:51 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 17:56:44 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/18 16:56:01 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 17:31:08 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strcat(char *dst, char const *src)
 {
-	char	*ptr;
+	size_t	start;
 	size_t	i;
 
-	if (!dest && !src)
-		return (NULL);
-	ptr = (char *) dest;
+	start = ft_strlen(dst);
 	i = 0;
-	while (i < n)
+	while (src[i])
 	{
-		if (dest < src)
-			ptr[i] = *((char *)&src[i]);
-		else
-			ptr[n - i - 1] = *((char *)&src[n - i - 1]);
+		dst[start + i] = src[i];
 		i++;
 	}
-	return (dest);
+	dst[start + i] = 0;
+	return (dst);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	total_len;
+	char	*str;
+
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	str = malloc((total_len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	*str = 0;
+	ft_strcat(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }
