@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:14:34 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 14:52:28 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/18 15:06:43 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	result = 0;
-	while (nptr[i])
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (nptr[i] < '0' || nptr[i] > '9')
-			return (0);
 		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
