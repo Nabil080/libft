@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 16:56:01 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:02:51 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/18 18:56:59 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/18 19:06:21 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dst, char const *src)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	start;
+	char	*str;
 	size_t	i;
 
-	start = ft_strlen(dst);
-	i = 0;
-	while (src[i])
-	{
-		dst[start + i] = src[i];
-		i++;
-	}
-	dst[start + i] = 0;
-	return (dst);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	size_t	total_len;
-	char	*str;
-
-	total_len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc((total_len + 1) * sizeof(char));
+	str = malloc ((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	*str = 0;
-	ft_strcat(str, s1);
-	ft_strcat(str, s2);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = 0;
 	return (str);
 }
