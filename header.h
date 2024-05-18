@@ -54,7 +54,8 @@ char    *strrchr(const char *s, int c);
 
 int     strncmp(const char *s1, const char *s2, size_t n);
 
-// memchr
+void    *memchr(const void *s, int c, size_t n);
+
 // memcmp
 
 char    *strnstr(const char *big, const char *little, size_t len)
