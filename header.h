@@ -54,6 +54,14 @@ char    *strrchr(const char *s, int c);
 
 int     strncmp(const char *s1, const char *s2, size_t n);
 
+// memchr
+// memcmp
+
+char    *strnstr(const char *big, const char *little, size_t len)
+
 int		ft_atoi(const char *nptr);
+
+// calloc
+// strdup
 
 #endif
