@@ -13,6 +13,7 @@ SRCS = 	ft_strlen.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
 		ft_toupper.c \
+		ft_tolower.c \
 		ft_atoi.c \
 
 FLAGS = -Wall -Wextra -Werror
