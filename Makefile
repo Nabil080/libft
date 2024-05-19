@@ -37,6 +37,7 @@ SRCS = 	ft_strlen.c \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
+		ft_lstlast.c \
 
 FLAGS = -Wall -Wextra -Werror
 
