@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct  s_list
+{
+    void            *content;
+    struct s_list   *next;
+}                   t_list;;
+
 size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
@@ -88,5 +94,9 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int nm, int fd);
+
+t_list	*ft_lstnew(void *content);
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
