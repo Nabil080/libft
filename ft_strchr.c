@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 17:51:09 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:34:20 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
+	unsigned char	uc;
+	unsigned char	*us;
 
-	if (!ft_isascii(c))
-		return ((char *) s);
+	uc = (unsigned char) c;
+	us = (unsigned char *) s;
 	i = 0;
-	while (s[i])
+	while (us[i])
 	{
-		if (s[i] == c)
-			return ((char *) &s[i]);
+		if (us[i] == uc)
+			return ((char *) &us[i]);
 		i++;
 	}
-	if (s[i] == c)
-		return ((char *) &s[i]);
+	if (us[i] == uc)
+		return ((char *) &us[i]);
 	return (NULL);
 }
 /*
