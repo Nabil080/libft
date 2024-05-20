@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:06 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:02:51 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:58:44 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*tab;
 	size_t	area;
 
+	if (size && nmemb > INT_MAX / size)
+		return (NULL);
 	if (nmemb == 0 || size == 0)
 		area = 1;
 	else
