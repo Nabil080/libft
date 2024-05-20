@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:34:20 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:53:51 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	uc;
 	unsigned char	*us;
 
