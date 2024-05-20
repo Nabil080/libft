@@ -35,6 +35,7 @@ SRCS = 	ft_strlen.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 
+
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
@@ -48,16 +49,16 @@ FLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${SRCS:.c=.o}
-	ar -rc ${NAME} $<
+	ar -rcs ${NAME} ${SRCS:.c=.o}
 
 bonus: ${BONUS:.c=.o}
-	ar -rc ${NAME} $<
+	ar -rcs ${NAME} ${BONUS:.c=.o}
 
 %.o : %.c
 	cc ${FLAGS} -c $< -o $@
 
 clean:
-	rm -f ${SRCS:.c=.o}
+	rm -f ${SRCS:.c=.o} ${BONUS:.c=.o}
 
 fclean: clean
 	rm -f ${NAME}
