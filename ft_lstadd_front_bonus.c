@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:04:20 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 16:43:48 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 17:36:31 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!new)
 		return ;
-	new->next = *lst;
+	if (*lst)
+		new->next = *lst;
 	*lst = new;
 }
 /*

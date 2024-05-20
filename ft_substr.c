@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:49:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:06:57 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:11:48 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*str = 0;
 		return (str);
 	}
-	if (len < s_len - start + 1)
-		str = malloc((len + 1) * sizeof(char));
-	else
-		str = malloc((s_len - start + 1) * sizeof(char));
+	if (len > s_len - start + 1)
+		len = s_len - start;
+	str = malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
