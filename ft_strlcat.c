@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:59 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:02:51 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/20 18:13:53 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 	if (siz == 0)
 		return (ret_value);
 	i = 0;
-	while (initial_dest + i < siz - 1)
+	while (src[i] && initial_dest + i < siz - 1)
 	{
 		dst[initial_dest + i] = src[i];
 		i++;
