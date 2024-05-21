@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:56:50 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 19:35:14 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:22:22 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,22 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	**map;
-	t_list	*next;
+	t_list	*map;
+	t_list	*new;
 
 	if (!lst)
 		return (NULL);
-	map = malloc(sizeof(t_list *));
-	if (!map)
-		return (NULL);
+	map = NULL;
 	while (lst)
 	{
-		next = lst->next;
-		if (f(lst->content))
-			ft_lstadd_back(map, ft_lstnew(f(lst->content)));
-		else
-			ft_lstdelone(lst, del);
-		lst = next;
-	}
-	next = *map;
-	free(map);
-	return (next);
-}
-/*
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*start;
-	t_list	*prev;
-	t_list	*next;
-
-	if (!lst)
-		return (NULL);
-	start = lst;
-	prev = NULL;
-	while (lst)
-	{
-		next = lst->next;
-		if (!f(lst->content))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
-			if (prev)
-				prev->next = next;
-			prev = lst;
-			del(lst);
+			ft_lstclear(&map, del);
+			return (NULL);
 		}
-		if (lst)
-			prev = lst;
-		lst = next;
+		ft_lstadd_back(&map, new);
+		lst = lst->next;
 	}
-	return (start);
+	return (map);
 }
-*/
