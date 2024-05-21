@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 18:14:34 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 14:07:50 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:42:13 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ int	ft_atoi(const char *nptr)
 	return (result * charge);
 }
 /*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
+int	main(int argc, char **argv)
 {
-	const char	*ptr = NULL;
-	printf("atoi : %i\n", atoi(ptr));
+	if (argc != 2)
+		return (1);
+	printf("atoi : %i\n", atoi(argv[1]));
+	printf("ft_atoi : %i\n", ft_atoi(argv[1]));
 	return (0);
 }
 */
