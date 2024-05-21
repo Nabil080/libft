@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:32:08 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:53:58 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:16:05 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,13 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *) &us[i]);
 	return (NULL);
 }
+/*
+int main(int argc, char const *argv[])
+{
+	if (argc != 3)
+		return (1);
+	printf("strrchr : %s\n", strrchr(argv[1], *(argv[2])));
+	printf("ft_strrchr : %s\n", ft_strrchr(argv[1], *(argv[2])));
+	return 0;
+}
+*/

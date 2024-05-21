@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:53:51 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:15:32 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,12 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 /*
-int main(void)
+int main(int argc, char const *argv[])
 {
-	char s[] = "teast";
-
-	printf("%s\n", ft_strchr(s, 't'));
-	printf("%s\n", ft_strchr(s, 'l'));
-	printf("%s\n", ft_strchr(s, 'z'));
-	printf("%s\n", ft_strchr(s, 0));
-	printf("%s\n", ft_strchr(s, 800));
-	return (0);
+	if (argc != 3)
+		return (1);
+	printf("strchr : %s\n", strchr(argv[1], *(argv[2])));
+	printf("ft_strchr : %s\n", ft_strchr(argv[1], *(argv[2])));
+	return 0;
 }
 */

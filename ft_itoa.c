@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:28:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 13:51:29 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:16:10 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,3 @@ int main(int argc, char const *argv[])
 	return 0;
 }
 */
-
