@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:06:37 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:53:47 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:07:00 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
-	if (*lst)
-		ft_lstdelone(*lst, del);
 	lst = NULL;
 }

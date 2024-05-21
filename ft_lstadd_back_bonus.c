@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:07:57 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 19:27:01 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:05:19 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!new)
 		return ;
 	if (!*lst)
-	{
 		*lst = new;
-		return ;
-	}
-	ft_lstlast(*lst)->next = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
 /*
 int	*ft_intdup(int n)
