@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:56:01 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 13:23:46 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 14:19:09 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strcat(str, s2);
 	return (str);
 }
+/*
+int main(int argc, char const *argv[])
+{
+	if (argc != 3)
+		return (1);
+	ft_putstr_fd(ft_strjoin(argv[1], argv[2]), 1);
+	return (0);
+}
+*/
