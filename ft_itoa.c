@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:28:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:56:57 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:51:29 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ char	*ft_itoa(int n)
 	return (str);
 }
 /*
-#include <stdio.h>
 int main(int argc, char const *argv[])
 {
 	if (argc != 2)
 		return (1);
-	printf("%s\n", ft_itoa(ft_atoi(argv[1])));
+	printf("ft_itoa : %s\n", ft_itoa(atoi(argv[1])));
 	return 0;
 }
 */
+
