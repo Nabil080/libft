@@ -51,10 +51,10 @@ FLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${SRCS:.c=.o}
-	ar -rcs ${NAME} ${SRCS:.c=.o}
+	ar -rc ${NAME} ${SRCS:.c=.o}
 
 bonus: ${BONUS:.c=.o}
-	ar -rcs ${NAME} ${BONUS:.c=.o}
+	ar -rc ${NAME} ${BONUS:.c=.o}
 
 %.o : %.c
 	cc ${FLAGS} -c $< -o $@
