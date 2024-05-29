@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:35:26 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:02:51 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:51:38 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trimmed, &s1[start], end - start + 1);
 	return (trimmed);
 }
-/*
-"012345";
-"......";
-"123456"
-*/

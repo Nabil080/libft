@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:59 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/20 18:25:09 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:34:05 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 {
-	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
+	size_t	i;
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);

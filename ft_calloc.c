@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:31:06 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 13:09:21 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:47:51 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,26 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*tab;
 	size_t	area;
 
-	if (size && nmemb > INT_MAX / size)
+	if (size && nmemb > SIZE_MAX / size)
 		return (NULL);
-	if (nmemb == 0 || size == 0)
-		area = 1;
-	else
-		area = nmemb * size;
+	area = nmemb * size;
 	tab = malloc(area);
 	if (!tab)
 		return (NULL);
 	ft_bzero(tab, area);
 	return (tab);
 }
+/*
+int main(void)
+{
+	size_t nb1 = 10737418174;
+	size_t nb2 = 3;
+	char *cal = (char *) calloc(nb1, nb2);
+	char *ft_cal = (char *) ft_calloc(nb1, nb2);
+	if (cal)
+		printf("calloc : %s\n", cal);
+	if (ft_cal)
+		printf("ft_calloc : %s\n", ft_cal);
+	return 0;
+}
+*/
