@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:12:14 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 14:12:33 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:52:52 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,42 +31,12 @@ static	size_t	ft_countwords(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_strndup(const char *s, size_t n)
+static void	*free_tab(char **tab, size_t col)
 {
-	char	*dup;
-	size_t	i;
-
-	dup = malloc((n + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (s[i] && i < n)
-	{
-		dup[i] = s[i];
-		i++;
-	}
-	dup[i] = 0;
-	return (dup);
-}
-
-static size_t	ft_successive_char(char const *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] == c)
-		i++;
-	return (i);
-}
-
-static size_t	ft_successive_not_char(char const *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
+	while (col--)
+		free(tab[col]);
+	free(tab);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -83,14 +53,14 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		i += ft_successive_char(&s[i], c);
+		i += ft_skipchar(&s[i], c);
 		start = i;
-		i += ft_successive_not_char(&s[i], c);
+		i += ft_reachchar(&s[i], c);
 		if (start == i)
 			break ;
-		tab[col] = ft_strndup(&s[start], i - start);
+		tab[col] = ft_substr(s, start, i - start);
 		if (!tab[col])
-			return (NULL);
+			return (free_tab(tab, col));
 		col++;
 	}
 	tab[col] = 0;
@@ -105,6 +75,8 @@ int	main(int argc, char const *argv[])
 	if (argc != 3)
 		return (1);
 	split = ft_split(argv[1], *argv[2]);
+	if (!split)
+		return (1);
 	i = 0;
 	while (split[i])
 	{

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_skipchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 18:56:59 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/26 16:34:05 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/29 17:42:09 by nbellila          #+#    #+#             */
+/*   Updated: 2024/05/29 17:55:14 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+size_t	ft_skipchar(char const *s, char c)
 {
-	char	*str;
 	size_t	i;
 
-	str = malloc((ft_strlen(s) + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
 	i = 0;
-	while (s[i])
-	{
-		str[i] = f(i, s[i]);
+	while (s[i] && s[i] == c)
 		i++;
-	}
-	str[i] = 0;
-	return (str);
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 14:32:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:02:51 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:34:05 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
 	unsigned char	*us1;
 	unsigned char	*us2;
+	size_t			i;
 
 	if (n == 0)
 		return (0);
