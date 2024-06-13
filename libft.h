@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 /*
+*	BASES
+*/
+# define DECIMAL "0123456789"
+# define HEXA "0123456789abcdef"
+# define HEXA_UP "0123456789ABCDEF"
+
+/*
 *	INT_MAX / SIZE_MAX
 */
 # include <limits.h>
@@ -24,9 +31,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 /*
+* va_arg
+*/
+# include <stdarg.h>
+/*
 *	is_check
 */
 int		ft_isalpha(int c);
+
+int		ft_isspace(int c);
 
 int		ft_isdigit(int c);
 
@@ -100,15 +113,21 @@ void	*ft_memchr(const void *s, int c, size_t n);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /*
-*	fd
+*	printers / putters
 */
-void	ft_putchar_fd(char c, int fd);
+int		ft_printf(const char *str, ...);
 
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd(char c, int fd);
 
-void	ft_putendl_fd(char *s, int fd);
+int		ft_putstr_fd(const char *s, int fd);
 
-void	ft_putnbr_fd(int nm, int fd);
+size_t	ft_putendl_fd(const char *s, int fd);
+
+size_t	ft_putnbr_fd(int nbr, int fd);
+
+size_t	ft_putnbr_base(long nbr, const char *base);
+
+size_t	ft_putunsigned_base(unsigned long int nbr, const char *base);
 /*
 *	linked list
 */
@@ -126,11 +145,13 @@ int		ft_lstsize(t_list *lst);
 
 t_list	*ft_lstlast(t_list *lst);
 
+t_list	*ft_lstlast_offset(t_list *lst, size_t offset);
+
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	*ft_lstclear(t_list **lst, void (*del)(void *));
 
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
