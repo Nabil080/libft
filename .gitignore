@@ -1,7 +1,3 @@
-*.out
+.*
 *.o
 *.a
-.*
-tester.*
-tester/
-README.md

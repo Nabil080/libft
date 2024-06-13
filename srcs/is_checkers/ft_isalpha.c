@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 19:31:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/18 19:38:26 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/16 11:50:33 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/11 13:34:23 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_isalpha(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
+
+int	ft_isspace(int c)
+{
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}
+/*
+int main(int argc, char const *argv[])
+{
+	if (argc != 2)
+		return (1);
+	printf("isalpha : %i\n", isalpha(*argv[1]));
+	printf("ft_isalpha : %i\n", ft_isalpha(*argv[1]));
+	return (0);
+}
+*/
