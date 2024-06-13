@@ -6,13 +6,13 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:56:01 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 14:19:09 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:47:29 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dst, char const *src)
+static char	*ft_strcat(char *dst, char const *src)
 {
 	size_t	start;
 	size_t	i;
@@ -42,12 +42,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strcat(str, s2);
 	return (str);
 }
-/*
-int main(int argc, char const *argv[])
-{
-	if (argc != 3)
-		return (1);
-	ft_putstr_fd(ft_strjoin(argv[1], argv[2]), 1);
-	return (0);
-}
-*/

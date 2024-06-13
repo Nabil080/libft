@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 19:34:09 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/01 13:48:54 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:43:35 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ size_t	ft_putnbr_fd(int nb, int fd)
 	count++;
 	return (count);
 }
-/*
-#include <fcntl.h>
-int main(int argc, char *argv[])
-{
-	if (argc != 2)
-		return (1);
-	int	file = open("slt.txt", O_WRONLY);
-	ft_putendl_fd((argv[1]), file);
-	close(file);
-	return 0;
-}
-*/

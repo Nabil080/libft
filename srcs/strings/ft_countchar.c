@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_countchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 18:14:34 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/13 17:39:58 by nbellila         ###   ########.fr       */
+/*   Created: 2024/06/13 17:46:45 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/13 17:46:54 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+size_t	ft_countchar(char const *s, char const c)
 {
-	long	result;
-	int		charge;
+	size_t	count;
 	size_t	i;
 
+	count = 0;
 	i = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
-		i++;
-	charge = 1;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	while (s[i])
 	{
-		if (nptr[i] == '-')
-			charge *= -1;
+		if (s[i] == c)
+			count++;
 		i++;
 	}
-	result = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (result * charge);
+	return (count);
 }

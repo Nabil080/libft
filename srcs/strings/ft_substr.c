@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:49:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/29 18:03:38 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:46:36 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(str, &s[start], len + 1);
 	return (str);
 }
-/*
-int	main(int argc, char **argv)
-{
-	char	*str;
-
-	if (argc < 2)
-		str = ft_substr("satestsa", 2, 4);
-	else
-		str = ft_substr(argv[1], atoi(argv[2]), atoi(argv[3]));
-	printf("substr : %s\n", str);
-}
-*/

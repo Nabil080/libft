@@ -61,6 +61,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 
+size_t	ft_countchar(char const *s, char const c);
+
 size_t	ft_skipchar(char const *s, char c);
 
 size_t	ft_reachchar(char const *s, char c);
