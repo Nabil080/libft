@@ -6,27 +6,11 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:35:26 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/29 17:51:38 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 17:46:41 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_countchar(char const *s, char const c)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 0;
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

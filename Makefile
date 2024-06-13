@@ -92,7 +92,7 @@ fclean: clean
 	rm -f ${NAME}
 
 norm :
-	norminette -R CheckForbiddenSourceHeader ${SRCS} ${BONUS}
+	norminette -R CheckForbiddenSourceHeader ${SRCS}
 	norminette -R CheckDefine ${HEADER}
 
 re: fclean all
