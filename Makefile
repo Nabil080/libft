@@ -1,5 +1,10 @@
 NAME = libft.a
 
+FLAGS = -Wall -Wextra -Werror
+
+INCLUDES =	includes \
+			. \
+
 IS_CHECKERS_FILES =	ft_isalpha.c \
 					ft_isdigit.c \
 					ft_isalnum.c \
@@ -64,10 +69,6 @@ OBJS_DIR = objs
 
 OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS_NAMES:.c=.o}}
 
-HEADER = libft.h
-
-FLAGS = -Wall -Wextra -Werror
-
 all: ${NAME}
 
 ${NAME}: ${OBJS_DIR} ${OBJS}
@@ -83,7 +84,7 @@ ${OBJS_DIR}:
 	mkdir ${OBJS_DIR}/linked_lists
 
 ${OBJS_DIR}/%.o : srcs/%.c
-	cc -I . ${FLAGS} -c $< -o $@
+	cc ${FLAGS} ${foreach include, ${INCLUDES}, -I ${include}} -c $< -o $@
 
 clean:
 	rm -rf ${OBJS_DIR}
@@ -93,6 +94,6 @@ fclean: clean
 
 norm :
 	norminette -R CheckForbiddenSourceHeader ${SRCS}
-	norminette -R CheckDefine ${HEADER}
+	norminette -R CheckDefine ${foreach include, ${INCLUDES}, ${include}/*.h}
 
 re: fclean all
