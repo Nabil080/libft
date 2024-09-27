@@ -15,6 +15,7 @@ IS_CHECKERS =	ft_isalpha.c \
 				ft_isdigit.c \
 				ft_isalnum.c \
 				ft_isascii.c \
+				ft_isspace.c \
 				ft_isabovemid.c \
 				ft_isprint.c
 
@@ -46,6 +47,7 @@ STRINGS =	ft_strlen.c \
 			ft_reachchar.c \
 			ft_skipchar.c \
 			ft_strmapi.c \
+			ft_strcut.c \
 			ft_striteri.c
 
 MEMORY =	ft_memset.c \
@@ -69,6 +71,10 @@ READ_FILES =	get_next_line.c \
 				get_next_line_utils.c \
 				get_lines.c
 
+ARRAYS =	remove_index.c \
+			ft_arrdup.c \
+			ft_arradd.c
+
 LINKED_LISTS =	ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
@@ -85,6 +91,7 @@ SRCS_NAMES =	${addprefix is_checkers/, ${IS_CHECKERS}} \
 				${addprefix memory/, ${MEMORY}} \
 				${addprefix converters/, ${CONVERTERS}} \
 				${addprefix read_files/, ${READ_FILES}} \
+				${addprefix arrays/, ${ARRAYS}} \
 				${addprefix linked_lists/, ${LINKED_LISTS}}
 
 SRCS_DIR = srcs/
@@ -104,13 +111,14 @@ ${NAME}: ${OBJS_DIR} ${OBJS}
 
 ${OBJS_DIR}:
 	mkdir ${OBJS_DIR}
-	mkdir ${OBJS_DIR}/is_checkers
-	mkdir ${OBJS_DIR}/printers
-	mkdir ${OBJS_DIR}/strings
-	mkdir ${OBJS_DIR}/memory
-	mkdir ${OBJS_DIR}/converters
-	mkdir ${OBJS_DIR}/linked_lists
-	mkdir ${OBJS_DIR}/read_files
+	mkdir ${OBJS_DIR}is_checkers
+	mkdir ${OBJS_DIR}printers
+	mkdir ${OBJS_DIR}strings
+	mkdir ${OBJS_DIR}memory
+	mkdir ${OBJS_DIR}converters
+	mkdir ${OBJS_DIR}arrays
+	mkdir ${OBJS_DIR}linked_lists
+	mkdir ${OBJS_DIR}read_files
 
 ${OBJS_DIR}%.o : ${SRCS_DIR}%.c
 	${CC} ${FLAGS} ${foreach include, ${INCLUDES},-I ${include}} -c $< -o $@

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cle-tort <cle-tort@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 15:07:00 by nbellila          #+#    #+#             */
-/*   Updated: 2024/07/03 17:46:47 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:32:46 by cle-tort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	read_line(t_list **lst, int fd)
 	int		read_count;
 
 	read_count = 1;
-	while (read_count && !ft_lstcontains(*lst, '\n'))
+	while (read_count > 0 && !ft_lstcontains(*lst, '\n'))
 	{
 		new = malloc(sizeof(t_list));
 		if (!new)
@@ -102,7 +102,7 @@ int	clean_lst(t_list **lst)
 		current = next;
 	}
 	nl_index = ft_strcontains(current->content, '\n') + 1;
-	clean = ft_strdup(&current->content[nl_index]);
+	clean = ft_strdup(&ft_lsttos(current)[nl_index]);
 	if (!clean)
 		return (0);
 	free(current->content);

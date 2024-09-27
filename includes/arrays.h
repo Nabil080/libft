@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   arrays.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 19:31:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/08/16 18:54:21 by nbellila         ###   ########.fr       */
+/*   Created: 2024/06/14 14:15:15 by nbellila          #+#    #+#             */
+/*   Updated: 2024/08/16 22:45:10 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef ARRAYS_H
+# define ARRAYS_H
 
-void	ft_putstr(const char *s)
-{
-	ft_putstr_fd(s, 1);
-}
+char	**ft_remove_index(char ***tab, size_t index);
 
-int	ft_putstr_fd(const char *s, int fd)
-{
-	int	i;
+char	**ft_arrdup(char **tab);
 
-	if (!s)
-		return (-1);
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	return (i);
-}
+char	**ft_arradd(char ***tab, char *str);
+
+#endif
