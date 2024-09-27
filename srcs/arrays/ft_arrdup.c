@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_arrdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 19:31:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/08/16 18:54:21 by nbellila         ###   ########.fr       */
+/*   Created: 2024/08/16 20:09:35 by nbellila          #+#    #+#             */
+/*   Updated: 2024/08/18 16:08:40 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+char	**ft_arrdup(char **tab)
 {
-	ft_putstr_fd(s, 1);
-}
+	char	**new;
+	size_t	i;
 
-int	ft_putstr_fd(const char *s, int fd)
-{
-	int	i;
-
-	if (!s)
-		return (-1);
 	i = 0;
-	while (s[i])
+	while (tab[i])
+		i++;
+	new = malloc((i + 1) * sizeof(char *));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (tab[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		new[i] = ft_strdup(tab[i]);
+		if (!new[i])
+			return (free_2d((void **)new, i));
 		i++;
 	}
-	return (i);
+	new[i] = tab[i];
+	return (new);
 }

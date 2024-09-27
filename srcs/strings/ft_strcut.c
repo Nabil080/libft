@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 19:31:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/08/16 18:54:21 by nbellila         ###   ########.fr       */
+/*   Created: 2024/08/19 23:20:08 by nbellila          #+#    #+#             */
+/*   Updated: 2024/08/19 23:30:34 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+char	*ft_strcut(char *str, size_t start, size_t end)
 {
-	ft_putstr_fd(s, 1);
-}
+	char	*new;
+	size_t	i;
+	size_t	i_new;
 
-int	ft_putstr_fd(const char *s, int fd)
-{
-	int	i;
-
-	if (!s)
-		return (-1);
+	new = ft_calloc(ft_strlen(str) - (end - start) + 1, sizeof(char));
+	if (!new)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	i_new = 0;
+	while (str[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		if (i < start || i > end)
+		{
+			new[i_new] = str[i];
+			i_new++;
+		}
 		i++;
 	}
-	return (i);
+	return (new);
 }

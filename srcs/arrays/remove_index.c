@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   remove_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/18 19:31:27 by nbellila          #+#    #+#             */
-/*   Updated: 2024/08/16 18:54:21 by nbellila         ###   ########.fr       */
+/*   Created: 2024/08/16 20:02:36 by nbellila          #+#    #+#             */
+/*   Updated: 2024/08/30 17:26:47 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(const char *s)
+char	**ft_remove_index(char ***tab, size_t index)
 {
-	ft_putstr_fd(s, 1);
-}
+	char	**new_tab;
+	size_t	i;
+	size_t	j;
 
-int	ft_putstr_fd(const char *s, int fd)
-{
-	int	i;
-
-	if (!s)
-		return (-1);
 	i = 0;
-	while (s[i])
+	while ((*tab)[i])
+		i++;
+	new_tab = ft_calloc((i - 1) + 1, sizeof(char *));
+	if (!new_tab)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while ((*tab)[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		if (i != index)
+		{
+			new_tab[j++] = (*tab)[i];
+		}
 		i++;
 	}
-	return (i);
+	free((*tab)[index]);
+	free(*tab);
+	*tab = new_tab;
+	return (*tab);
 }
